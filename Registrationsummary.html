@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Registration Summary</title>
+  </head>
+  <body>
+    <h1>Registration Summary</h1>
+    <div id="summary"></div>
+    <script src="script.js">
+        // Sample registration data
+const registrations = [
+  { name: "John Doe", email: "johndoe@example.com", ticketType: "Standard" },
+  { name: "Jane Smith", email: "janesmith@example.com", ticketType: "VIP" },
+  // Add more registration objects as needed
+];
+
+// Generate the registration summary
+function generateSummary() {
+  const summaryContainer = document.getElementById("summary");
+  let summaryHTML = "";
+
+  registrations.forEach((registration, index) => {
+    summaryHTML += `
+      <div>
+        <h3>Registration ${index + 1}</h3>
+        <p><strong>Name:</strong> ${registration.name}</p>
+        <p><strong>Email:</strong> ${registration.email}</p>
+        <p><strong>Ticket Type:</strong> ${registration.ticketType}</p>
+      </div>
+      <hr>
+    `;
+  });
+
+  summaryContainer.innerHTML = summaryHTML;
+}
+
+// Call the function to generate the summary
+generateSummary();
+
+    </script>
+  </body>
+</html>
